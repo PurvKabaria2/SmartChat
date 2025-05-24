@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { applySecurityHeaders, isPublicRoute } from '@/lib/auth-utils';
+import { applySecurityHeaders } from '@/lib/auth-utils';
 
 type ChatError = {
   message: string;
@@ -27,21 +27,8 @@ const DIFY_API_URL = "https://api.dify.ai/v1/chat-messages";
 
 export const runtime = 'edge'; 
 
-// Simple auth check for Edge API routes
-async function simpleAuthCheck(req: NextRequest): Promise<boolean> {
-  const cookieHeader = req.headers.get('cookie');
-  if (!cookieHeader) return false;
-  
-  // Just check if the session cookie exists
-  // We can't verify it in Edge Runtime, but this provides basic protection
-  const hasSessionCookie = cookieHeader.includes('__session=');
-  return hasSessionCookie;
-}
-
 export async function POST(req: NextRequest) {
   try {
-    const pathname = req.nextUrl.pathname;
-   
     
     const { query, conversation_id, user: userIdFromRequest, files } = await req.json();
 
