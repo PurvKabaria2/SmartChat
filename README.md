@@ -102,7 +102,7 @@ npm run dev
 
 ## Deployment
 
-You can visit the deployed site at: [SmartChat](https://smartchat-hackathon.vercel.app/)
+You can visit the deployed site at: [SmartChat](https://smartchat-hackathon-8.vercel.app/)
 This application can be deployed to Vercel with minimal configuration:
 
 1. Push your code to a Git repository
@@ -129,9 +129,9 @@ This application can be deployed to Vercel with minimal configuration:
 ## Testing
 
 Admin credentials:
-- admintesting@koletter.com
+- gutimxc5@gmail.com
 - admin12345678
 
 User credentials:
-- usertesting@koletter.com
+- purvkabaria@gmail.com
 - user12345678
