@@ -22,7 +22,7 @@ type RequestBody = {
   files?: FileData[];
 };
 
-const DIFY_API_KEY = process.env.DIFY_API_KEY;
+const DIFY_API_KEY = process.env.NEXT_PUBLIC_DIFY_API_KEY;
 const DIFY_API_URL = "https://api.dify.ai/v1/chat-messages";
 
 export const runtime = 'edge'; 
@@ -41,21 +41,7 @@ async function simpleAuthCheck(req: NextRequest): Promise<boolean> {
 export async function POST(req: NextRequest) {
   try {
     const pathname = req.nextUrl.pathname;
-    
-    // Skip auth for public routes
-    if (!isPublicRoute(pathname)) {
-      // For protected routes, check for authentication
-      const isAuthenticated = await simpleAuthCheck(req);
-      
-      if (!isAuthenticated) {
-        return new NextResponse(JSON.stringify({ error: "Unauthorized" }), {
-          status: 401,
-          headers: {
-            "Content-Type": "application/json",
-          },
-        });
-      }
-    }
+   
     
     const { query, conversation_id, user: userIdFromRequest, files } = await req.json();
 
