@@ -11,7 +11,7 @@ const nextConfig = {
     FIREBASE_MESSAGING_SENDER_ID: process.env.FIREBASE_MESSAGING_SENDER_ID,
     FIREBASE_APP_ID: process.env.FIREBASE_APP_ID,
     FIREBASE_MEASUREMENT_ID: process.env.FIREBASE_MEASUREMENT_ID,
-    ELEVENLABS_API_KEY: process.env.ELEVENLABS_API_KEY,
+    ELEVENLABS_API_KEY: process.env.NEXT_PUBLIC_ELEVENLABS_API_KEY,
   },
   images: {
     remotePatterns: [

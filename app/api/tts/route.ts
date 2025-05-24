@@ -55,7 +55,7 @@ export async function POST(request: NextRequest) {
       }
     }
     
-    const apiKey = process.env.ELEVENLABS_API_KEY;
+    const apiKey = process.env.NEXT_PUBLIC_ELEVENLABS_API_KEY;
     if (!apiKey) {
       console.error("Missing ElevenLabs API key");
       const errorResponse = NextResponse.json(
